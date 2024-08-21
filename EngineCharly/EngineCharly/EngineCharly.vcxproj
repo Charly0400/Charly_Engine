@@ -15,30 +15,30 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3E5661B1-AA16-DDE7-7351-2665DFD021C4}</ProjectGuid>
+    <ProjectGuid>{BEBA39C6-AA1D-C96A-53A3-01213FE594ED}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Engine Charly</RootNamespace>
+    <RootNamespace>EngineCharly</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-    <UseDebugLibraries>true</UseDebugLibraries>
+    <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -55,23 +55,23 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug-windows-x86_64\Engine Charly\</OutDir>
-    <IntDir>..\bin-int\Debug-windows-x86_64\Engine Charly\</IntDir>
-    <TargetName>Engine Charly</TargetName>
+    <OutDir>..\bin\Debug-windows-x86_64\EngineCharly\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\EngineCharly\</IntDir>
+    <TargetName>EngineCharly</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Release-windows-x86_64\Engine Charly\</OutDir>
-    <IntDir>..\bin-int\Release-windows-x86_64\Engine Charly\</IntDir>
-    <TargetName>Engine Charly</TargetName>
+    <OutDir>..\bin\Release-windows-x86_64\EngineCharly\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\EngineCharly\</IntDir>
+    <TargetName>EngineCharly</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Dist-windows-x86_64\Engine Charly\</OutDir>
-    <IntDir>..\bin-int\Dist-windows-x86_64\Engine Charly\</IntDir>
-    <TargetName>Engine Charly</TargetName>
+    <OutDir>..\bin\Dist-windows-x86_64\EngineCharly\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86_64\EngineCharly\</IntDir>
+    <TargetName>EngineCharly</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -82,16 +82,17 @@
       <AdditionalIncludeDirectories>src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>..\bin\Debug-windows-x86_64\Engine Charly\Engine Charly.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\EngineCharly\EngineCharly.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Engine\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Engine Charly\Engine Charly.dll ..\bin\Debug-windows-x86_64\Sanbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Engine Charly\Engine Charly.dll ..\bin\Debug-windows-x86_64\Sanbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\EngineCharly\EngineCharly.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\EngineCharly\EngineCharly.dll ..\bin\Debug-windows-x86_64\Sanbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\EngineCharly\EngineCharly.dll ..\bin\Debug-windows-x86_64\Sanbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -102,16 +103,17 @@
       <AdditionalIncludeDirectories>src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>..\bin\Release-windows-x86_64\Engine Charly\Engine Charly.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Release-windows-x86_64\EngineCharly\EngineCharly.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\Engine\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Engine Charly\Engine Charly.dll ..\bin\Release-windows-x86_64\Sanbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Engine Charly\Engine Charly.dll ..\bin\Release-windows-x86_64\Sanbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\EngineCharly\EngineCharly.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\EngineCharly\EngineCharly.dll ..\bin\Release-windows-x86_64\Sanbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\EngineCharly\EngineCharly.dll ..\bin\Release-windows-x86_64\Sanbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -122,26 +124,30 @@
       <AdditionalIncludeDirectories>src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>..\bin\Dist-windows-x86_64\Engine Charly\Engine Charly.lib</ImportLibrary>
+      <ImportLibrary>..\bin\Dist-windows-x86_64\EngineCharly\EngineCharly.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Engine\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Engine Charly\Engine Charly.dll ..\bin\Dist-windows-x86_64\Sanbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Engine Charly\Engine Charly.dll ..\bin\Dist-windows-x86_64\Sanbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\EngineCharly\EngineCharly.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\EngineCharly\EngineCharly.dll ..\bin\Dist-windows-x86_64\Sanbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\EngineCharly\EngineCharly.dll ..\bin\Dist-windows-x86_64\Sanbox &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Engine\Aplication.h" />
     <ClInclude Include="src\Engine\Core.h" />
     <ClInclude Include="src\Engine\EntryPoint.h" />
+    <ClInclude Include="src\Engine\Event\Event.h" />
+    <ClInclude Include="src\Engine\Log.h" />
     <ClInclude Include="src\EngineCharly.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Engine\Aplication.cpp" />
+    <ClCompile Include="src\Engine\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

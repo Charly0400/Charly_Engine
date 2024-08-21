@@ -12,6 +12,6 @@ public:
 
 };
 
-Charly::Aplication* CreateApplication() {
+Charly::Aplication* Charly::CreateApplication() {
 	return new Sanbox();
 }

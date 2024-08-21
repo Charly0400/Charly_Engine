@@ -28,8 +28,9 @@ project "EngineCharly"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
+		cppdialect "C++20"
+		staticruntime "off"
+		runtime "Release"
 		systemversion "latest"
 
 		defines{
@@ -75,8 +76,9 @@ project "Sanbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "On"
+		cppdialect "C++20"
+		staticruntime "off"
+		runtime "Release"
 		systemversion "latest"
 
 		defines{
