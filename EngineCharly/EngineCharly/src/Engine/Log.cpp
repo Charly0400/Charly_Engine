@@ -1,6 +1,5 @@
+#include "charlypch.h"
 #include "Log.h"
-#include <iostream>
-
 
 Charly::Log::Log(std::string name) {
 
