@@ -11,7 +11,7 @@ workspace "EngineCharly"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}" 
 
 IncludeDir = {}
-IncludeDir ["GLFW"] = "EngineCharly/vendor/GLWF/include"
+IncludeDir["GLFW"] = "EngineCharly/vendor/GLFW/include"
 
 include "EngineCharly/vendor/GLFW"
 
@@ -34,11 +34,11 @@ project "EngineCharly"
 
 	includedirs{
 		"%{prj.name}/src",
-		"%{IncludeDir.GLWF}"
+		"%{IncludeDir.GLFW}"
 	}
 	
 	links{
-		"GLWF",
+		"GLFW",
 		"opengl32.lib"
 	}
 
