@@ -33,6 +33,9 @@
     <ClInclude Include="src\Engine\Log.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="src\Engine\Window.h">
+      <Filter>Engine</Filter>
+    </ClInclude>
     <ClInclude Include="src\EngineCharly.h" />
     <ClInclude Include="src\charlypch.h" />
   </ItemGroup>

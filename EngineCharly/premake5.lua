@@ -8,7 +8,13 @@ workspace "EngineCharly"
 		"Dist"
 	}
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}" 
+
+IncludeDir = {}
+IncludeDir ["GLFW"] = "EngineCharly/vendor/GLWF/include"
+
+include "EngineCharly/vendor/GLFW"
+
 
 project "EngineCharly"
 	location "EngineCharly"
@@ -19,7 +25,7 @@ project "EngineCharly"
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
 	pchheader "charlypch.h"
-	pchheader "EngineCharly/src/charlypch.cpp"
+	pchsource "EngineCharly/src/charlypch.cpp"
 
 	files{
 		"%{prj.name}/src/**.h",
@@ -27,7 +33,13 @@ project "EngineCharly"
 	}
 
 	includedirs{
-		"%{prj.name}/src"
+		"%{prj.name}/src",
+		"%{IncludeDir.GLWF}"
+	}
+	
+	links{
+		"GLWF",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -47,14 +59,17 @@ project "EngineCharly"
 
 	filter "configurations:Debug"
 		defines "CHARLY_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "CHARLY_RELEASE"
+		buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "CHARLY_DIST"
+		buildoptions "/MD"
 		symbols "On"
 
 project "Sanbox"
@@ -90,13 +105,16 @@ project "Sanbox"
 
 	filter "configurations:Debug"
 		defines "CHARLY_DEBUG"
+				buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "CHARLY_RELEASE"
+				buildoptions "/MD"
 		symbols "On"
 
 	filter "configurations:Dist"
 		defines "CHARLY_DIST"
+				buildoptions "/MD"
 		symbols "On"
 

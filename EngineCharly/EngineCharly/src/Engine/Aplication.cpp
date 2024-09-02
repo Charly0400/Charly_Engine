@@ -1,3 +1,4 @@
+#include "charlypch.h"
 #include "Aplication.h"
 
 namespace Charly {

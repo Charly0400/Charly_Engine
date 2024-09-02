@@ -1,7 +1,7 @@
 #pragma once
+#include "charlypch.h"
 #include "Engine/Core.h"
 
-#include "charlypch.h"
 
 namespace Charly {
 	class CHARLY_API Log
