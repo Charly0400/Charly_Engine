@@ -1,6 +1,8 @@
 #include "charlypch.h"
 #include "Log.h"
 
+CHARLY_API Charly::Log* Charly::Log::_globalLog;
+
 Charly::Log::Log(std::string name) {
 
 	_name = name;
@@ -14,6 +16,11 @@ Charly::Log::Log() {
 
 Charly::Log::~Log() {
 
+}
+
+void Charly::Log::Init() {
+	if (!_globalLog)
+		_globalLog = new Log("Static Charly Log");
 }
 
 void Charly::Log::Print(std::string text, const char* file, int line)

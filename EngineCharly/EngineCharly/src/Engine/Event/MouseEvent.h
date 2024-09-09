@@ -68,7 +68,7 @@ namespace Charly {
 			return ss.str();
 		}
 
-		EVENT_CLASS_CATEGORY(MouseButtonPressed)
+		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
 	class CHARLY_API MouseButtonReleasedEvent : public MouseButtonEvent {
@@ -81,7 +81,7 @@ namespace Charly {
 			return ss.str();
 		}
 
-		EVENT_CLASS_CATEGORY(MouseButtonReleased)
+		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
 
 }

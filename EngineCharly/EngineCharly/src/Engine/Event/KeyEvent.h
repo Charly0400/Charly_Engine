@@ -26,7 +26,7 @@ namespace Charly {
 			return ss.str();
 		}
 
-		EVENT_CLASS_TYPE(keyPressed)
+		EVENT_CLASS_TYPE(KeyPressed)
 	private:
 		int _repeatCount;
 	};
